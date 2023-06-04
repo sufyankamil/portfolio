@@ -1,0 +1,92 @@
+import React, { useEffect, useState } from 'react';
+import { Container, Row, Col } from 'react-bootstrap';
+import { ArrowRightCircle } from 'react-bootstrap-icons';
+import headerImg from "../assets/images/header-img.svg";
+
+export default function Banner() {
+    const [loopNum, setLoopNum] = useState(0);
+    const [isDeleting, setIsDeleting] = useState(false);
+    const [toRotate, setToRotate] = useState(['Full Stack Developer', 'Web Designer', 'Freelancer']);
+    const [text, setText] = useState('');
+    const [delta, setDelta] = useState(300 - Math.random() * 100);
+    const period = 2000;
+
+    useEffect(() => {
+        let ticker = setInterval(() => {
+            tick();
+        }, delta);
+
+        return () => { clearInterval(ticker) };
+
+
+
+    }, [text]);
+
+    const tick = () => {
+        let i = loopNum % toRotate.length;
+        let fullText = toRotate[i];
+        let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1);
+
+        setText(updatedText);
+
+        if (isDeleting) {
+            setDelta(calculateDelta() / 2);
+        }
+
+        if (!isDeleting && updatedText === fullText) {
+            setIsDeleting(true);
+            setDelta(period);
+        } else if (isDeleting && updatedText === '') {
+            setIsDeleting(false);
+            setLoopNum(loopNum + 1);
+            setDelta(500);
+        }
+    }
+
+
+
+    const calculateDelta = () => {
+        return 300 - Math.random() * 100;
+    }
+
+
+    return (
+        <section className="banner" id="home">
+            <Container>
+                <Row className='align-items-center'>
+                    <Col xs={12} md={6} xl={7}>
+                        <div className="banner-content">
+                            <span className='tagline'>
+                                Welcome to my portfolio
+                            </span>
+                            <h1>
+                                {`Hi, I am Sufyan Kamil `}
+                                <span className='wrap'>
+                                    {text}
+                                    {/* I am a full stack developer with 4 years of experience. Expertise in designing, developing, and implementing web applications. I also make website more & more interactive with web animations. */}
+                                </span>
+                            </h1>
+                            <p>
+                                Experienced Full Stack Developer with expertise in designing, developing, and implementing web applications. Proficient in front-end technologies like HTML, CSS, and JavaScript, Dart as well as back-end technologies like Node.js, Python, MongoDB, SQL and PostgreSQL. Skilled in working with popular frameworks such as React. Committed to creating responsive, visually appealing, and intuitive user interfaces that meet user requirements. Experienced with the latest cutting edge development tools and procedures. Able to effectively self-manage during independent projects, as well as collaborate as part of a productive team.
+                            </p>
+                            <button onClick={() => console.log('connect me')} className="btn btn-outline-primary">
+                                <i className="fa fa-paper-plane" aria-hidden="true"></i> Connect Me
+                                <ArrowRightCircle size={25} />
+                            </button>
+                            {/* <h1 className="banner-title">Hi, I am <span className="primary-color">Sufyan Kamil</span></h1>
+                            <p className="banner-desc">I am a full stack developer with 4 years of experience. Expertise in designing, developing, and implementing web applications. I also make website more & more interactive with web animations.</p> */}
+                            <div className="banner-btn1">
+                                {/* <button className="btn btn-outline-primary">Hire Me</button> */}
+                                <button className="btn btn-primary">Get CV</button>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col xs={12} md={6} xl={5}>
+                        <img src={headerImg} alt="Headder Img" />
+                    </Col>
+                </Row>
+            </Container>
+
+        </section>
+    )
+}
