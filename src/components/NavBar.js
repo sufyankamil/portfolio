@@ -3,7 +3,7 @@ import { Navbar, Container, Nav } from 'react-bootstrap'
 import logo from "../assets/images/logo.svg";
 import navIcon1 from "../assets/images/nav-icon1.svg";
 import navIcon2 from "../assets/images/nav-icon2.svg";
-import navIcon3 from "../assets/images/nav-icon3.svg";
+import github from "../assets/images/mark-github.svg";
 
 export default function NavBar() {
     const [activeLink, setActiveLink] = useState('home');
@@ -29,6 +29,18 @@ export default function NavBar() {
         setActiveLink(value);
     }
 
+    // Function to open github profile
+    const openGithub = () => {
+        window.open('https://github.com/sufyankamil'
+            , '_blank');
+    }
+
+    // Function to open linkedIn profile
+    const openLinkedIn = () => {
+        window.open('https://www.linkedin.com/in/sufyan-k-77a974110/'
+            , '_blank');
+    }
+
     return (
         <Navbar expand="lg" className={scrolled ? 'scrolled' : ''}>
             < Container >
@@ -45,15 +57,18 @@ export default function NavBar() {
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href="https://www.linkedin.com/in/sufyan-k-77a974110/">
-                                <img src={navIcon1} alt='linkedIn' />
+                            <a href={openLinkedIn}>
+                                <img src={navIcon1} alt='linkedIn' onClick={openLinkedIn} />
                             </a>
-                            <a href='#'>
+                            <a href='#0'>
                                 <img src={navIcon2} alt='facebook' />
                             </a>
 
-                            <a href='#'>
-                                <img src={navIcon3} alt='github' />
+                            <a href={openGithub}>
+                                <img src={github} alt='github' onClick={openGithub} />
+
+
+                                {/* <Github /> */}
                             </a>
                         </div>
                         <button
