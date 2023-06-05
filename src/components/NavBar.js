@@ -40,23 +40,26 @@ export default function NavBar() {
                     <Nav className='me-auto'>
                         <Nav.Link href="#home" className={activeLink === 'home' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('home')}>Home</Nav.Link>
                         <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('skills')}>Skills</Nav.Link>
-                        <Nav.Link href="#projects" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
-                        <Nav.Link href="#contact" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact</Nav.Link>
+                        <Nav.Link href="#project" className={activeLink === 'projects' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('projects')}>Projects</Nav.Link>
+                        <Nav.Link href="#connect" className={activeLink === 'contact' ? 'active navbar-link' : 'navbar-link'} onClick={() => onUpdateActiveLink('contact')}>Contact</Nav.Link>
                     </Nav>
                     <span className="navbar-text">
                         <div className="social-icon">
-                            <a href='#'>
-                                <img src={navIcon1} alt='facebook' />
+                            <a href="https://www.linkedin.com/in/sufyan-k-77a974110/">
+                                <img src={navIcon1} alt='linkedIn' />
                             </a>
                             <a href='#'>
-                                <img src={navIcon2} alt='linkedin' />
+                                <img src={navIcon2} alt='facebook' />
                             </a>
 
                             <a href='#'>
                                 <img src={navIcon3} alt='github' />
                             </a>
                         </div>
-                        <button onClick={() => console.log('connect me')} className="btn btn-outline-primary">
+                        <button
+                            className="btn btn-primary btn-connect"
+                            onClick={() => window.open('mailto:"sufyankamil@hotmail.com"   ?subject=Enquiry from Portfolio Website', '_blank')}
+                        >
                             <i className="fa fa-paper-plane" aria-hidden="true"></i> Connect Me
                         </button>
                     </span>
