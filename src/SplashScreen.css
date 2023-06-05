@@ -1,0 +1,41 @@
+/* Splash CSS */
+
+.splash-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    color: gray;
+    background-color: #f8f8f8;
+  }
+  
+.splash-screen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black
+}
+
+  .splash-screen .loading-dot {
+    font-size: 100px;
+    margin-top: -80px;
+    position: relative;
+    animation: ease-in-out infinite alternate;
+    animation-name: run;
+    animation-duration: 1.2s;
+  }
+  
+  @keyframes run {
+    0% {
+      left: -90px;
+      color: #eee;
+    }
+    50% {
+      color: #666;
+    }
+    100% {
+      left: 90px;
+      color: #eee;
+    }
+  }
