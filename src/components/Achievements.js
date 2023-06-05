@@ -35,14 +35,6 @@ const Achievements = () => {
                     </Col>
                 </Row>
             </Container>
-            {/* <h2>Achievements</h2>
-            {achievementsData.map((achievement, index) => (
-                <div key={index} className="achievement">
-                    <h3>{achievement.title}</h3>
-                    <p>{achievement.description}</p>
-                    <p className="date">{achievement.date}</p>
-                </div>
-            ))} */}
         </section>
     );
 };
