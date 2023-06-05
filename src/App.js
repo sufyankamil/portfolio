@@ -9,6 +9,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import withSplashScreen from './components/Splash';
+import Achievements from './components/Achievements';
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
         <Banner />
         <Skills />
         <Projects />
+        <Achievements />
         <ProjectCard />
         <Contact />
         <Footer />

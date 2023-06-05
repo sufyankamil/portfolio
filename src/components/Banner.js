@@ -21,10 +21,9 @@ export default function Banner() {
 
         return () => { clearInterval(ticker) };
 
-
-
     });
 
+    // Function to type text in banner section with animation effect
     const tick = () => {
         let i = loopNum % toRotate.length;
         let fullText = toRotate[i];
@@ -46,6 +45,7 @@ export default function Banner() {
         }
     }
 
+    // Function to calculate delta time for typing
     const calculateDelta = () => {
         return 300 - Math.random() * 100;
     }
@@ -53,6 +53,12 @@ export default function Banner() {
     // Function to download resume
     const downloadResume = () => {
         window.open(Resume, '_blank');
+    }
+
+    // Function to go to naukri profile
+    const goToNaukri = () => {
+        window.open('https://www.naukri.com/mnjuser/profile?id=&orgn=homepage'
+            , '_blank');
     }
 
 
@@ -72,14 +78,13 @@ export default function Banner() {
                                             {`Hi, I am Sufyan Kamil `}
                                             <span className='wrap'>
                                                 {text}
-                                                {/* I am a full stack developer with 4 years of experience. Expertise in designing, developing, and implementing web applications. I also make website more & more interactive with web animations. */}
                                             </span>
                                         </h1>
                                         <p>
                                             Experienced Full Stack Developer with expertise in designing, developing, and implementing web applications. Proficient in front-end technologies like HTML, CSS, and JavaScript, Dart as well as back-end technologies like Node.js, Python, MongoDB, SQL and PostgreSQL. Skilled in working with popular frameworks such as React. Committed to creating responsive, visually appealing, and intuitive user interfaces that meet user requirements. Experienced with the latest cutting edge development tools and procedures. Able to effectively self-manage during independent projects, as well as collaborate as part of a productive team.
                                         </p>
-                                        <button onClick={() => console.log('connect me')} className="btn btn-outline-primary">
-                                            <i className="fa fa-paper-plane" aria-hidden="true"></i> Connect Me
+                                        <button onClick={goToNaukri} className="btn btn-outline-primary">
+                                            <i className="fa fa-paper-plane" aria-hidden="true"></i> Learn More
                                             <ArrowRightCircle size={25} />
                                         </button>
                                         <div className="banner-btn1">
