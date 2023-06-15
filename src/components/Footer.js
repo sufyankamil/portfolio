@@ -4,6 +4,7 @@ import MailForm from './MailForm'
 import navIcon1 from '../assets/images/nav-icon1.svg'
 import navIcon2 from '../assets/images/nav-icon2.svg'
 import github from "../assets/images/mark-github.svg";
+import VisitorCounter from './Visitor'
 
 export default function Footer() {
     // Function to go to top of the page
@@ -32,6 +33,7 @@ export default function Footer() {
                         <div className='logo-link'>
                             <p className="logo-text" onClick={goToTop}>SK</p>
                         </div>
+                        <VisitorCounter />
                     </Col>
                     <Col sm={6} className="text-center text-md-left">
 

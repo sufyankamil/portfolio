@@ -63,8 +63,25 @@ export default function Projects() {
                                         Projects are the best way to highlight your skills and achievements. Show off your work with images and descriptions in this section.
                                     </p>
 
+                                    <div className='portfolio-container'>
+                                        <div className='portfolio-box'>
+                                            <img src={colorSharp2} alt="Portfolio" />
+                                            <div className='portfolio-layer'>
+                                                {
+                                                    projects.map((project, index) => (
+                                                        <ProjectCard
+                                                            key={index}
+                                                            {...project}
+                                                        />
+                                                    ))
+                                                }
+                                            </div>
+                                        </div>
 
-                                    <Tab.Container id="projects-tabs" defaultActiveKey="first">
+                                    </div>
+
+
+                                    {/* <Tab.Container id="projects-tabs" defaultActiveKey="first">
                                         <Nav variant="pills" className='nav-pills mb-5 justify-content-center' id='pills-tab'>
                                             <Nav.Item>
                                                 <Nav.Link eventKey={"first"}>Tab 1</Nav.Link>
@@ -100,7 +117,7 @@ export default function Projects() {
                                                 </p>
                                             </Tab.Pane>
                                         </Tab.Content>
-                                    </Tab.Container>
+                                    </Tab.Container> */}
                                 </div>
                             }
                         </TrackVisibility>
@@ -108,8 +125,8 @@ export default function Projects() {
                     </Col>
                 </Row>
             </Container>
-            <br />
-            <img className='background-iamge-right' src={colorSharp2} alt='wave' />
+            {/* <br /> */}
+            {/* <img className='background-iamge-right' src={colorSharp2} alt='wave' /> */}
         </section >
     )
 }

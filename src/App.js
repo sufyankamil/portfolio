@@ -18,9 +18,9 @@ class App extends Component {
         <NavBar />
         <Banner />
         <Skills />
-        <Projects />
-        <Achievements />
-        <ProjectCard />
+        {/* <Projects /> */}
+        {/* <Achievements />
+        <ProjectCard /> */}
         <Contact />
         <Footer />
       </Fragment>
